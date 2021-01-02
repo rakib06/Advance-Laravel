@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use App\Billing\PaymentGateway;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,9 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton( PaymentGateway::class, function($app){
-            return new PaymentGateway($currentcy = 'usd');
-        });
+        
     }
 
     /**
