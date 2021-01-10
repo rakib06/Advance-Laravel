@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use App\Channel;
-use Illuminate\Contracts\View\View;
+
+use App\Http\View\Composers\ChannelsComposer;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -38,8 +39,13 @@ class AppServiceProvider extends ServiceProvider
             
         }); */
         // post.* 
-        view()->composer(['post.create'], function ($view) {
+        /* view()->composer(['post.create'], function ($view) {
             $view->with('channels', Channel::orderBy('name', 'desc')->get());
-        });
+        }); */
+
+        # Option 3: Dedicated Class 
+        View::composer(['post.*'], ChannelsComposer::class);
+
+
     }
 }
