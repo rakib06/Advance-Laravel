@@ -17,7 +17,7 @@
 php artisan tinker
 ```
 ```php
-factory(\App\Channel::class, 20->create()
+factory(\App\Channel::class, 20)->create();
 ```
 
 
