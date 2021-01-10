@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function create()
     {
-        $channels = Channel::all();
+        $channels = Channel::orderBy('name')->get();
         return view('post.create', compact('channels')) ;
 
     }
