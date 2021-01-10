@@ -6,12 +6,10 @@
     <title>Channels</title>
 </head>
 <body>
-    <ul>
+    
 
-    @foreach($channels as $channel )
-        <li>{{$channel->name }}</li>
-    @endforeach
+    @include('partials.channels.list')
   
-    </ul>
+    
 </body>
 </html>

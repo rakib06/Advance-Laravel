@@ -10,6 +10,6 @@ class ChannelsComposer
 {
     public function compose(View $view)
     {
-        $view->with('channels', Channel::orderBy('name', 'asc')->get());
+        $view->with('channels', Channel::orderBy('name', 'desc')->get());
     }
 }
