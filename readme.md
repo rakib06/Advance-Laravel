@@ -19,6 +19,9 @@ php artisan tinker
 ```php
 factory(\App\Channel::class, 20)->create();
 ```
+```bash
+php artisan make:controller PostController 
+```
 
 
 
